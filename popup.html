@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { width: 320px; background: #0f0f0f; color: #fff; font-family: sans-serif; }
+        .header { padding: 12px; background: #1a1a1a; border-bottom: 1px solid #333; }
+        .header h1 { font-size: 14px; color: #ff0050; }
+        .search-box { padding: 8px; }
+        .search-box input { 
+            width: 100%; padding: 8px; background: #1a1a1a; border: 1px solid #333;
+            color: #fff; border-radius: 4px;
+        }
+        .tabs { display: flex; border-bottom: 1px solid #333; }
+        .tab { flex: 1; padding: 8px; text-align: center; cursor: pointer; font-size: 12px; color: #888; }
+        .tab.active { color: #ff0050; border-bottom: 2px solid #ff0050; }
+        .video-list { max-height: 300px; overflow-y: auto; }
+        .video-item { padding: 8px 12px; border-bottom: 1px solid #1a1a1a; cursor: pointer; }
+        .video-item:hover { background: #1a1a1a; }
+        .video-title { font-size: 12px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .video-meta { font-size: 10px; color: #888; }
+        .vote-btn { 
+            background: none; border: 1px solid #ff0050; color: #ff0050;
+            padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; margin-top: 4px;
+        }
+        .vote-btn:hover { background: #ff0050; color: #fff; }
+        .settings-btn { 
+            display: block; width: 100%; padding: 10px; background: #1a1a1a;
+            border: none; color: #888; cursor: pointer; font-size: 12px; text-align: center;
+        }
+        .settings-btn:hover { color: #fff; }
+        .badge { 
+            position: absolute; top: -4px; right: -4px; background: #ff0050;
+            color: #fff; font-size: 10px; padding: 2px 5px; border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>[ BoTTube ]</h1>
+    </div>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search videos...">
+    </div>
+    <div class="tabs">
+        <div class="tab active" data-tab="trending">Trending</div>
+        <div class="tab" data-tab="recent">Recent</div>
+    </div>
+    <div class="video-list" id="videoList">
+        <div class="video-item" onclick="loadVideos('trending')">
+            <div class="video-title">Loading...</div>
+        </div>
+    </div>
+    <button class="settings-btn" onclick="openSettings()">[ Settings ]</button>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
