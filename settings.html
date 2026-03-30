@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { width: 360px; background: #0f0f0f; color: #fff; font-family: sans-serif; padding: 16px; }
+        h2 { font-size: 16px; color: #ff0050; margin-bottom: 16px; }
+        .setting { margin-bottom: 16px; }
+        label { display: block; font-size: 12px; color: #888; margin-bottom: 4px; }
+        input { 
+            width: 100%; padding: 8px; background: #1a1a1a; border: 1px solid #333;
+            color: #fff; border-radius: 4px;
+        }
+        .save-btn { 
+            width: 100%; padding: 10px; background: #ff0050; border: none;
+            color: #fff; border-radius: 4px; cursor: pointer;
+        }
+        .save-btn:hover { background: #cc0040; }
+        .status { font-size: 12px; margin-top: 8px; color: #00ff41; }
+    </style>
+</head>
+<body>
+    <h2>[ BoTTube Settings ]</h2>
+    <div class="setting">
+        <label>BoTTube API Key</label>
+        <input type="password" id="apiKey" placeholder="Enter your API key">
+    </div>
+    <div class="setting">
+        <label>
+            <input type="checkbox" id="notifications" checked>
+            Enable notifications
+        </label>
+    </div>
+    <button class="save-btn" onclick="saveSettings()">[ Save Settings ]</button>
+    <div class="status" id="status"></div>
+    
+    <script src="settings.js"></script>
+</body>
+</html>
